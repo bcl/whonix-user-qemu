@@ -13,12 +13,12 @@ First start the gateway::
 ```run-gateway ./Whonix-Gateway-*qcow2```
 
 By default it uses 256M and runs in text mode. You can change this by setting
-MEM first. It also defaults to 2 CPUs, this can be changed by setting CPU when
+MEM first. It also defaults to 2 CPUs, this can be changed by setting SMP when
 running it::
 
-```MEM=1024 CPU=1 run-gateway ./Whonix-Gateway-*qcow2```
+```MEM=1024 SMP=1 run-gateway ./Whonix-Gateway-*qcow2```
 
-Then run the Workstation, MEM and CPU also work here. It defaults to 2048M
+Then run the Workstation, MEM and SMP also work here. It defaults to 2048M
 of RAM and 2 CPUs.
 
 ```run-workstation ./Whonix-Workstation-*qcow2```
