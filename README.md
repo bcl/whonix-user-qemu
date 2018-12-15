@@ -1,6 +1,12 @@
-These helper scripts will run Whonix gateway and workstation without needing
-root access, libvirt, or bridge support. It uses qemu user networking, and a
+# Run Whonix without root
+
+These helper scripts will run Whonix Gateway and Workstation without needing
+root access, libvirt, or bridge support. It uses qemu user networking and a
 socket to communicate between the Workstation VM and the Gateway VM.
+
+Download the KVM release of Whonix from
+[here](https://www.whonix.org/wiki/KVM#Download_and_Extract), verify the images
+and extract them.
 
 First start the gateway::
 
@@ -17,3 +23,6 @@ of RAM and 2 CPUs.
 
 ```run-workstation ./Whonix-Workstation-*qcow2```
 
+Communication between the VMs uses socket 7001 on localhost, and the traffic is
+not encrypted, so anyone one the local system who manages to gain enough
+privileges to monitor localhost could examine the traffic.
