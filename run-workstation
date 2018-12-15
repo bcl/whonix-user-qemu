@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+SMP=${SMP:-2}
+echo "SMP = $SMP"
+
+MEM=${MEM:-2048}
+echo "MEM = $MEM"
+
+RNG="-object rng-random,id=virtio-rng0,filename=/dev/urandom -device virtio-rng-pci,rng=virtio-rng0,id=rng0,bus=pci.0,addr=0x9"
+
+INTERNAL_NET="-netdev socket,id=net1,connect=localhost:7001 -device virtio-net-pci,netdev=net1"
+qemu-kvm -cpu host -accel kvm -m "$MEM" -smp "$SMP" $RNG $INTERNAL_NET -daemonize "$@"
